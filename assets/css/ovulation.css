@@ -1,0 +1,125 @@
+/* Babban sashi na Prep Page */
+#prep-page {
+    padding: 0 20px 100px;
+    background: var(--bg-main);
+}
+
+.prep-header {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    background: var(--bg-main);
+    padding: 10px 0;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Calendar Inputs */
+.calendar-inputs {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.input-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Calendar Box */
+.calendar-container {
+    background: var(--card-bg);
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-nav-btn {
+    background: var(--bg-main);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.weekday {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding-bottom: 10px;
+}
+
+/* Legend (Alamomi) */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.dot-lg {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+}
+
+/* Fact Cards */
+.fact-card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 20px;
+    border-left: 5px solid;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+}
+
+.fact-card h4 {
+    margin-bottom: 5px;
+}
+
+.fact-card ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}

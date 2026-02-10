@@ -1,0 +1,18 @@
+project/
+├── index.html           # Splash + Choice Screen
+├── login.html          # Authentication Page
+├── prep.html          # Ovulation Calendar Page
+├── dashboard.html     # Main Dashboard Page
+├── assets/
+│   ├── css/
+│   │   ├── style.css          # Shared styles
+│   │   ├── splash-choice.css  # Splash & Choice specific
+│   │   ├── auth.css           # Auth screen styles
+│   │   ├── prep.css           # Ovulation calendar styles
+│   │   ├── dashboard.css      # Dashboard styles
+│   │   └── navigation.css     # Navigation styles
+│   └── js/
+│       ├── shared.js          # Shared functions
+│       ├── auth.js            # Auth logic
+│       ├── prep.js            # Calendar logic
+│       └── dashboard.js       # Dashboard logic

@@ -1,0 +1,122 @@
+/* Babban bango na Auth Screen */
+.auth-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-main);
+    z-index: 2000;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+/* Header sashi */
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h1 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
+
+.auth-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Form din kansa */
+.auth-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.auth-card h2 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+/* Input Fields */
+.modern-input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1.5px solid #eee;
+    background: var(--bg-main);
+    color: var(--text-main);
+    outline: none;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.date-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Button */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    border-radius: 15px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s opacity;
+}
+
+.btn-submit:active {
+    opacity: 0.8;
+}
+
+/* Toggle Link */
+.toggle-container {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.toggle-link {
+    color: var(--accent);
+    cursor: pointer;
+}
+
+/* Back Button */
+.sticky-nav-wrapper {
+    margin-bottom: 20px;
+}
+
+
+
+/*********************************** Modern Back Button Style ******************************/
+.modern-back-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: 0.3s;
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.modern-back-btn:active {
+    transform: scale(0.9);
+}

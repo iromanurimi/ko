@@ -1,0 +1,86 @@
+/********************************** Slider *******************************************/
+.slider-section {
+    position: relative;
+    margin: 10px 0 20px;
+    padding: 0 20px;
+}
+
+.slider-viewport {
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.slides-wrapper {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.slide-card {
+    min-width: 100%;
+    height: 185px;
+    padding: 25px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.g1 {
+    background: linear-gradient(135deg, #3b82f6, #2dd4bf);
+}
+
+.g2 {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+}
+
+.g3 {
+    background: linear-gradient(135deg, #f59e0b, #ec4899);
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    transition: 0.3s;
+}
+
+.dot.active {
+    width: 24px;
+    border-radius: 10px;
+    background: var(--primary);
+}
+
+.glass-icon-wrapper {
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.card-tag {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}

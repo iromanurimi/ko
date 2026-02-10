@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Taimakon Ciki - Zaɓi Hanya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/splash-choice.css">
+    <style>
+        /* Hide splash screen by default if already shown before */
+        body:has(#choice-screen.visible) #splash-screen {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="avatar">TC</div>
+        <h1>TAIMAKON CIKI</h1>
+        <p>Kula da lafiyar ki, farin cikin mu.</p>
+    </div>
+
+    <!-- Choice Screen -->
+    <div id="choice-screen">
+        <div class="welcome-text">
+            <p class="welcome-tag">Barka da Zuwa</p>
+            <h2>Yaya kike son<br>fara amfani da mu?</h2>
+        </div>
+
+        <div class="choice-grid">
+            <a href="login.htm" class="choice-card-modern">
+                <div class="icon-box pregnant">🤰</div>
+                <div class="content-box">
+                    <h3>Ina da Juna Biyu</h3>
+                    <p>Bibiyar girman jariri da lafiya</p>
+                </div>
+                <div class="arrow-hint">❯</div>
+            </a>
+
+            <a href="prep.htm" class="choice-card-modern">
+                <div class="icon-box prep">🌡️</div>
+                <div class="content-box">
+                    <h3>Ina Shirye-shirye</h3>
+                    <p>Lissafin ovulation da samun ciki</p>
+                </div>
+                <div class="arrow-hint">❯</div>
+            </a>
+
+            <a href="dashboard.htm" class="choice-card-modern">
+                <div class="icon-box articles">📚</div>
+                <div class="content-box">
+                    <h3>Karanta Rubututtuka</h3>
+                    <p>Shawarwari kan abinci da lafiya</p>
+                </div>
+                <div class="arrow-hint">❯</div>
+            </a>
+        </div>
+    </div>
+
+    <script src="/assets/js/shared.js"></script>
+    <script src="/assets/js/splash-choice.js"></script>
+</body>
+
+</html>

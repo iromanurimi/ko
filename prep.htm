@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Taimakon Ciki - Calendar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/prep.css">
+</head>
+
+<body>
+    <div class="prep-page">
+        <div class="prep-header">
+            <div class="header-flex">
+                <div class="header-title-group">
+                    <a href="index.html" class="modern-back-btn">❮</a>
+                    <h2>Calendar Mai Wayo</h2>
+                </div>
+                <button class="avatar">?</button>
+            </div>
+        </div>
+
+        <div class="calendar-inputs">
+            <div>
+                <label class="input-label">RANAR AL'ADA TA KARSHE</label>
+                <input type="date" id="cal-lmp" class="modern-input">
+            </div>
+            <div>
+                <label class="input-label">TSAWON ZAGAYE</label>
+                <input type="number" id="cal-cycle" class="modern-input" value="28">
+            </div>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="calendar-nav-btn" id="prev-month">❮</button>
+                <h3 id="month-display">Janairu 2026</h3>
+                <button class="calendar-nav-btn" id="next-month">❯</button>
+            </div>
+
+            <div class="calendar-grid weekdays">
+                <div class="weekday">Alh</div>
+                <div class="weekday">Lit</div>
+                <div class="weekday">Tal</div>
+                <div class="weekday">Lar</div>
+                <div class="weekday">Alm</div>
+                <div class="weekday">Jim</div>
+                <div class="weekday">Asa</div>
+            </div>
+            <div class="calendar-grid" id="calendar-main-grid"></div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="dot-lg period"></div>
+                Jinin Al'ada
+            </div>
+            <div class="legend-item">
+                <div class="dot-lg fertile"></div>
+                Lokacin Haihuwa
+            </div>
+            <div class="legend-item">
+                <div class="dot-lg ovulation"></div>
+                Hasashen Haila
+            </div>
+        </div>
+
+        <div class="fact-cards">
+            <div class="fact-card">
+                <h4 id="prediction-text">Shigar da kwanakin ki don gani...</h4>
+            </div>
+            <div class="fact-card">
+                <h4>🥗 Abubuwan Kiyaye</h4>
+                <ul>
+                    <li>Fara shan Folic Acid</li>
+                    <li>Cin abinci mai gina jiki</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/shared.js"></script>
+    <script src="/assets/js/prep.js"></script>
+</body>
+
+</html>

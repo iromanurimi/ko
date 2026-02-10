@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Taimakon Ciki - Ultimate UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+
+    <!-------------------------------splash screen ------------------------------------->
+    <div id="splash-screen">
+        <div class="avatar"
+            style="width:100px; height:100px; font-size: 2.5rem; background: white; color: var(--primary);">TC</div>
+        <h1 style="margin-top:20px; letter-spacing: 2px;">TAIMAKON CIKI</h1>
+        <p style="opacity: 0.8;">Kula da lafiyar ki, farin cikin mu.</p>
+    </div>
+
+    <!-------------------------------choice screen ------------------------------------->
+    <div id="choice-screen">
+        <div class="welcome-text">
+            <p
+                style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.75rem; margin-bottom: 8px;">
+                Barka da Zuwa</p>
+            <h2>Yaya kike son <br>fara amfani da mu?</h2>
+        </div>
+        <div class="choice-grid">
+            <div class="choice-card-modern" onclick="goToLogin()">
+                <div class="icon-box" style="background: #fdf2f8; color: #ec4899;">🤰</div>
+                <div class="content-box">
+                    <h3>Ina da Juna Biyu</h3>
+                    <p>Bibiyar girman jariri da lafiya</p>
+                </div>
+                <div class="arrow-hint">❯</div>
+            </div>
+
+            <div class="choice-card-modern" onclick="goToPrep()">
+                <div class="icon-box" style="background: #f5f3ff; color: #8b5cf6;">🌡️</div>
+                <div class="content-box">
+                    <h3>Ina Shirye-shirye</h3>
+                    <p>Lissafin ovulation da samun ciki</p>
+                </div>
+                <div class="arrow-hint">❯</div>
+            </div>
+            <div class="choice-card-modern" onclick="goToDashboard()">
+                <div class="icon-box" style="background: #eff6ff; color: #3b82f6;">📚</div>
+                <div class="content-box">
+                    <h3>Karanta Rubututtuka</h3>
+                    <p>Shawarwari kan abinci da lafiya</p>
+                </div>
+                <div class="arrow-hint">❯</div>
+            </div>
+
+            <div class="choice-card-modern" onclick="goToDashboard()">
+                <div class="icon-box" style="background: #eff6ff; color: #3b82f6;">📚</div>
+                <div class="content-box">
+                    <h3>Karanta Rubututtuka</h3>
+                    <p>Shawarwari kan abinci da lafiya</p>
+                </div>
+                <div class="arrow-hint">❯</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!------------------------------- Auth screen ------------------------------------->
+    <div id="auth-screen" class="auth-screen">
+        <div class="sticky-nav-wrapper">
+            <div class="modern-back-btn" onclick="closePrep()">❮</div>
+        </div>
+
+        <div class="auth-header">
+            <div class="avatar" style="width: 70px; height: 70px; margin: 0 auto 15px; font-size: 1.8rem;">TC</div>
+            <h1>Barka da Zuwa</h1>
+            <p>Shiga don duba lafiyar juna biyu</p>
+        </div>
+
+        <form id="auth-form" onsubmit="event.preventDefault(); handleAuth();" class="auth-card">
+            <div id="form-title">Shiga Ciki (Login)</div>
+
+            <div id="register-fields" style="display: none;">
+                <input type="text" placeholder="Cikakken Suna" class="modern-input">
+
+                <select id="calc-method" onchange="toggleDateLabel()" class="modern-input">
+                    <option value="LMP">Ranar Haila (LMP)</option>
+                    <option value="EDD">Ranar Haihuwa (EDD)</option>
+                </select>
+
+                <label id="date-label" class="date-label">Zabi Ranar LMP:</label>
+                <input type="date" class="modern-input">
+            </div>
+
+            <input type="number" placeholder="Phone Number" required class="modern-input">
+            <input type="password" placeholder="Kalmar Sirri" required class="modern-input"
+                style="margin-bottom: 20px;">
+
+            <button type="submit" class="btn-submit">Ci gaba</button>
+
+            <p class="toggle-container">
+                <span id="toggle-text">Ba ki da akaunti?</span>
+                <strong id="toggle-btn" class="toggle-link" onclick="toggleAuth()">Yi Rajista</strong>
+            </p>
+        </form>
+    </div>
+
+
+
+
+    <!-------------------------------Ovulation------------------------------------->
+    <div id="prep-page">
+        <div class="prep-header">
+            <div class="header-flex">
+                <div class="header-title-group">
+                    <div class="sticky-nav-wrapper">
+                        <div class="modern-back-btn" onclick="closePrep()">❮</div>
+                    </div>
+                    <h2 style="font-size: 1.2rem;">Calendar Mai Wayo</h2>
+                </div>
+                <button class="avatar" style="width:40px; height:40px; font-size:1rem;">?</button>
+            </div>
+        </div>
+
+        <div class="calendar-inputs">
+            <div>
+                <label class="input-label">RANAR AL'ADA TA KARSHE</label>
+                <input type="date" id="cal-lmp" class="modern-input" onchange="initCalendar()">
+            </div>
+            <div>
+                <label class="input-label">TSAWON ZAGAYE</label>
+                <input type="number" id="cal-cycle" class="modern-input" value="28" onchange="initCalendar()">
+            </div>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="calendar-nav-btn" onclick="changeMonth(-1)">❮</button>
+                <h3 id="month-display" style="color: var(--primary);">Janairu 2026</h3>
+                <button class="calendar-nav-btn" onclick="changeMonth(1)">❯</button>
+            </div>
+
+            <div class="calendar-grid">
+                <div class="weekday">Alh</div>
+                <div class="weekday">Lit</div>
+                <div class="weekday">Tal</div>
+                <div class="weekday">Lar</div>
+                <div class="weekday">Alm</div>
+                <div class="weekday">Jim</div>
+                <div class="weekday">Asa</div>
+            </div>
+            <div class="calendar-grid" id="calendar-main-grid"></div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="dot-lg" style="background:#fee2e2;"></div> Jinin Al'ada
+            </div>
+            <div class="legend-item">
+                <div class="dot-lg" style="background:#fdf2f8;"></div> Lokacin Haihuwa
+            </div>
+            <div class="legend-item">
+                <div class="dot-lg" style="border: 2px dashed #ef4444;"></div> Hasashen Haila
+            </div>
+        </div>
+
+        <div style="padding: 20px 0;">
+            <div class="fact-card" style="border-left-color: var(--primary);">
+                <h4 id="prediction-text" style="font-size: 0.9rem;">Shigar da kwanakin ki don gani...</h4>
+            </div>
+            <div class="fact-card" style="border-left-color: #10b981;">
+                <h4 style="color: #10b981;">🥗 Abubuwan Kiyaye</h4>
+                <ul style="font-size: 0.85rem;">
+                    <li>Fara shan Folic Acid</li>
+                    <li>Cin abinci mai gina jiki</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-------------------------------Header, slider & dashboard------------------------------------->
+    <div class="app-container">
+        <header class="header">
+            <div class="dashboard-style">
+                <div class="avatar">IU</div>
+                <div class="welcome">
+                    <h2>Barka, Uwargida</h2>
+                    <p>Mako 24 • Watan 6 </p>
+                </div>
+            </div>
+            <button id="theme-toggle">🌓</button>
+        </header>
+
+        <!-------------------------------slider section------------------------------------->
+        <section class="slider-section">
+            <div class="slider-viewport">
+                <div class="slides-wrapper" id="slider">
+                    <div class="slide-card g1">
+                        <div class="card-content">
+                            <h4>Mako 24</h4>
+                            <h3>Kamar <strong>Kankana</strong></h3>
+                            <div class="card-tag">Lafiya: Kyau ✨</div>
+                            <div class="card-progress-container">
+                                <div class="card-progress-bar" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="glass-icon-wrapper"><span class="card-icon">🍉</span></div>
+                    </div>
+                    <div class="slide-card g2">
+                        <div class="card-content">
+                            <h4>EDD</h4>
+                            <h3>Sauran <strong>112 Days</strong></h3>
+                            <div class="card-tag">Wata na 6</div>
+                            <div class="card-progress-container">
+                                <div class="card-progress-bar" style="width: 72%;"></div>
+                            </div>
+                        </div>
+                        <div class="glass-icon-wrapper"><span class="card-icon">📅</span></div>
+                    </div>
+                    <div class="slide-card g3">
+                        <div class="card-content">
+                            <h4>Motsa Jiki</h4>
+                            <h3>Lokacin <strong>Yoga</strong></h3>
+                            <div class="card-tag">Minti 15 rage</div>
+                            <div class="card-progress-container">
+                                <div class="card-progress-bar" style="width: 40%;"></div>
+                            </div>
+                        </div>
+                        <div class="glass-icon-wrapper"><span class="card-icon">🧘‍♀️</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dots-container">
+                <div class="dot active" onclick="goToSlide(0)"></div>
+                <div class="dot" onclick="goToSlide(1)"></div>
+                <div class="dot" onclick="goToSlide(2)"></div>
+            </div>
+        </section>
+
+
+
+        <div class="section-header">
+            <h3>Yaya kike ji?</h3>
+        </div>
+        <div class="mood-section">
+            <div class="mood-container"><span class="mood-item">😊</span><span class="mood-item">😴</span><span
+                    class="mood-item">🤢</span><span class="mood-item">🤩</span><span class="mood-item">😔</span></div>
+        </div>
+
+
+        <!-------------------------------Shortcut Section ------------------------------------->
+
+        <div class="shortcuts">
+            <a href="#" class="shortcut-item">
+                <div class="icon-bg" style="color:#7c3aed;">🩺</div><span>Awo</span>
+            </a>
+            <a href="#" class="shortcut-item">
+                <div class="icon-bg" style="color:#ec4899;">👶</div><span>Motsi</span>
+            </a>
+            <a href="#" class="shortcut-item">
+                <div class="icon-bg" style="color:#3b82f6;">⚖️</div><span>Nauyi</span>
+            </a>
+            <a href="#" class="shortcut-item">
+                <div class="icon-bg" style="color:#ef4444;">🚨</div><span>Gaggawa</span>
+            </a>
+        </div>
+
+
+        <div class="section-header">
+            <h3>Labaran Kiwon Lafiya</h3><a href="#"
+                style="color:var(--primary); font-weight:700; text-decoration:none; font-size:0.8rem;">Duba Duka</a>
+        </div>
+
+        <!-------------------------------Articles Section Shortcut ------------------------------------->
+        <div class="article-card">
+            <div class="art-thumb">🥗</div>
+            <div class="art-info">
+                <h4>Abinci mai Gina Jiki</h4>
+                <p>Yadda za ki kara jini cikin sauri...</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <div class="art-thumb">🥗</div>
+            <div class="art-info">
+                <h4>Abinci mai Gina Jiki</h4>
+                <p>Yadda za ki kara jini cikin sauri...</p>
+            </div>
+        </div>
+
+
+        <!------------------------------- Bottom navigation ------------------------------------->
+        <nav class="nav-bar">
+            <a href="#" class="nav-btn active">🏠</a>
+            <a href="#" class="nav-btn">💬</a>
+            <!-- <div class="center-btn">+</div> -->
+            <a href="#" class="nav-btn">📊</a>
+            <a href="#" class="nav-btn">⚙️</a>
+        </nav>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/assets/js/app-complete.js"></script>
+</body>
+
+</html>

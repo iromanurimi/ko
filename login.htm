@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Taimakon Ciki - Shiga</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+</head>
+
+<body>
+    <div class="auth-screen">
+        <div class="sticky-nav-wrapper">
+            <a href="index.htm" class="modern-back-btn">❮</a>
+        </div>
+
+        <div class="auth-header">
+            <div class="avatar" style="width: 70px; height: 70px; margin: 0 auto 15px; font-size: 1.8rem;">TC</div>
+            <h1>Barka da Zuwa</h1>
+            <p>Shiga don duba lafiyar juna biyu</p>
+        </div>
+        <form id="auth-form" class="auth-card">
+            <div id="form-title">Shiga Ciki (Login)</div>
+
+            <div id="register-fields" style="display: none;">
+                <input type="text" placeholder="Cikakken Suna" class="modern-input">
+
+                <select id="calc-method" class="modern-input">
+                    <option value="LMP">Ranar Haila (LMP)</option>
+                    <option value="EDD">Ranar Haihuwa (EDD)</option>
+                </select>
+
+                <label id="date-label" class="date-label">Zabi Ranar LMP:</label>
+                <input type="date" class="modern-input">
+            </div>
+
+            <input type="number" placeholder="Lambar Waya" required class="modern-input">
+            <input type="password" placeholder="Kalmar Sirri" required class="modern-input">
+
+            <button type="submit" class="btn-submit">Ci gaba</button>
+
+            <p class="toggle-container">
+                <span id="toggle-text">Ba ki da akaunti?</span>
+                <strong id="toggle-btn" class="toggle-link">Yi Rajista</strong>
+            </p>
+        </form>
+    </div>
+
+    <script src="/assets/js/shared.js"></script>
+    <script src="/assets/js/auth.js"></script>
+</body>
+
+</html>
